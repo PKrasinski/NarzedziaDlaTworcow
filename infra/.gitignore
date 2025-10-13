@@ -1,0 +1,21 @@
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfvars
+!example.tfvars
+.terraform.lock.hcl
+
+# Ansible
+inventory.ini
+ip.txt
+
+# SSH
+*.pem
+*.key
+
+# Logs
+*.log
+
+# Environment variables
+.env 

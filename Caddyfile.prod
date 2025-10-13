@@ -1,0 +1,15 @@
+app.narzedziadlatworcow.pl, xn--narzdziadlatwrcw-ivbc32e.pl {
+    @polish-domain host xn--narzdziadlatwrcw-ivbc32e.pl
+    redir @polish-domain https://narzedziadlatworcow.pl{uri} permanent
+
+    # API routes for server
+    handle_path /api* {
+        reverse_proxy server:5005
+    }
+
+    handle {
+        root * /srv/app
+        try_files {path} /index.html
+        file_server
+    }
+}

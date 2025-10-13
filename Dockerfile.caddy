@@ -1,0 +1,38 @@
+# Base image with Bun
+FROM oven/bun:alpine AS base
+
+# Install dependencies
+FROM base AS deps
+WORKDIR /app
+
+# Copy package files
+COPY package.json .
+COPY packages packages/
+COPY apps/narzedziadlatworcow.pl/platform/package.json apps/narzedziadlatworcow.pl/platform/package.json
+COPY apps/narzedziadlatworcow.pl/ui/package.json apps/narzedziadlatworcow.pl/ui/package.json
+COPY apps/narzedziadlatworcow.pl/context/package.json apps/narzedziadlatworcow.pl/context/package.json
+
+# Remove non-package.json files from packages to speed up install
+RUN find packages -mindepth 2 -maxdepth 3 -type d '!' -exec test -e "{}/package.json" \; -print | xargs rm -rf
+
+# Install dependencies
+RUN bun install --frozen-lockfile
+
+# Build the application
+FROM base AS builder
+WORKDIR /app
+COPY --from=deps /app .
+COPY . .
+
+# Build packages first, then the platform app
+RUN bunx @arcote.tech/arc-cli build
+RUN cd apps/narzedziadlatworcow.pl/platform && bun run build
+
+# Final Caddy stage
+FROM caddy:latest
+
+# Copy the built platform app to Caddy's serve directory
+COPY --from=builder /app/apps/narzedziadlatworcow.pl/platform/dist /srv/app
+
+# Copy Caddy configuration
+COPY apps/narzedziadlatworcow.pl/Caddyfile.prod /etc/caddy/Caddyfile 

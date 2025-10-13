@@ -1,0 +1,9 @@
+localhost {
+    handle_path /api* {
+        reverse_proxy host.docker.internal:5005 
+    }
+
+    handle {
+        reverse_proxy host.docker.internal:1420
+    }
+}

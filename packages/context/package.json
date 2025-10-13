@@ -1,0 +1,36 @@
+{
+  "name": "@narzedziadlatworcow.pl/context",
+  "version": "0.0.1",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/server.js",
+  "browser": "./dist/browser.js",
+  "types": "./dist/server.d.ts",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "browser": "./dist/browser/index.js",
+      "default": "./dist/server/index.js"
+    },
+    "./browser": "./dist/browser/index.js",
+    "./server": "./dist/server/index.js"
+  },
+  "dependencies": {
+    "@arcote.tech/arc": "latest",
+    "@types/jsonwebtoken": "^9.0.9",
+    "jsonwebtoken": "^9.0.2"
+  },
+  "peerDependencies": {
+    "nodemailer": "^7.0.3",
+    "@types/nodemailer": "^6.4.17",
+    "stripe": "^17.0.0",
+    "bun": "^1.1.39",
+    "openai": "^5.3.0"
+  },
+  "peerDependenciesMeta": {
+    "bun": {
+      "optional": true
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "file": "index.ts",
+  "outDir": "dist",
+  "clients": ["browser", "server"],
+  "externals": {
+    "browser": ["fs", "path", "crypto"],
+    "server": [],
+    "common": ["jsonwebtoken", "openai"]
+  }
+}

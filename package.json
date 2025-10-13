@@ -1,0 +1,9 @@
+{
+  "name": "narzedziadlatworcow",
+  "private": true,
+  "scripts": {},
+  "workspaces": [
+    "packages/**/*"
+  ],
+  "dependencies": {}
+}

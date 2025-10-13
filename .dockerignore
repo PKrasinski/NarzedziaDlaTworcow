@@ -1,0 +1,76 @@
+# Dependencies
+node_modules
+**/node_modules
+.pnp
+.pnp.js
+bun.lockb
+
+# Tauri specific
+**/src-tauri/target
+**/src-tauri/gen
+**/.vite
+**/.vite-temp
+
+# Testing
+coverage
+**/coverage
+
+# Next.js
+.next/
+**/.next/
+out/
+build
+dist
+
+# Production
+build/
+**/build/
+dist/
+**/dist/
+
+# Debug & Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+logs
+*.log
+
+# Local env files
+.env*.local
+.env
+**/.env
+
+# Vercel
+.vercel
+
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts
+
+# IDE & OS
+.idea
+.DS_Store
+*.pem
+.vscode
+
+# Docker
+Dockerfile
+**/Dockerfile
+.dockerignore
+
+# Version control
+.git
+.gitignore
+
+# Project specific
+mongo/
+doc/
+snippets/
+draft/
+
+# Cache directories
+.cache
+**/.cache
+.temp
+**/.temp
