@@ -48,6 +48,5 @@ services:
       - "host.docker.internal:host-gateway"
 volumes:
   caddy_data:
-    external: true
   minio_data:
   postgres_data:

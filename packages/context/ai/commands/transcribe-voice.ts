@@ -33,7 +33,7 @@ async function transcribeAudio(audioFile: File): Promise<string> {
   }
 }
 
-export default command("transcribeVoice")
+export const transcribeVoice = command("transcribeVoice")
   .withParams({
     voiceMessage: file()
       .types([

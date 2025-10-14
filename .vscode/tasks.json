@@ -93,8 +93,8 @@
     {
       "label": "Arc: Dev",
       "type": "shell",
-      "command": "arc",
-      "args": ["dev"],
+      "command": "bunx",
+      "args": ["@arcote.tech/arc-cli", "dev"],
       "options": {
         "cwd": "${workspaceFolder}"
       },
@@ -147,8 +147,9 @@
     {
       "label": "Narzedziadlatworcow.pl: Stripe Webhook Listener",
       "type": "shell",
-      "command": "stripe",
+      "command": "bunx",
       "args": [
+        "stripe",
         "listen",
         "--forward-to",
         "https://localhost/api/stripe/webhook"

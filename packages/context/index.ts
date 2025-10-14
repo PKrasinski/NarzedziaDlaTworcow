@@ -9,6 +9,7 @@ import { creditsPurchased, strategyAgentServicePurchased } from "./events";
 
 // New ordering system factory
 import { createAccountWorkspaceElements } from "./account-workspace";
+import { transcribeVoice } from "./ai";
 export * from "./strategy";
 
 // Create ordering elements using factory function
@@ -19,6 +20,7 @@ export const context1 = arcContext([
   // Remaining non-auth events
   strategyAgentServicePurchased,
   creditsPurchased,
+  transcribeVoice,
 ]);
 
 export const context2 = arcContext([...accountWorkspaceElements]);
@@ -50,7 +52,6 @@ export { ideaSchema } from "./strategy/content-ideas/objects/idea";
 
 // Export Arc framework types for chat components
 export type { ArcAnyViewRecord } from "@arcote.tech/arc";
-export { transcribeVoice };
 
 // Export new strategy contexts
 export { contentFormatsContext } from "./strategy/content-formats";
