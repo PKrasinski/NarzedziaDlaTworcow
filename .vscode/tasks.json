@@ -147,12 +147,12 @@
     {
       "label": "Narzedziadlatworcow.pl: Stripe Webhook Listener",
       "type": "shell",
-      "command": "bunx",
+      "command": "stripe",
       "args": [
-        "stripe",
         "listen",
         "--forward-to",
-        "https://localhost/api/stripe/webhook"
+        "https://localhost/api/stripe/webhook",
+        "--skip-verify"
       ],
       "options": {
         "cwd": "${workspaceFolder}/packages"
