@@ -16,7 +16,7 @@ export const ToolWrapper: React.FC<ToolWrapperProps> = ({
   return (
     <div className={cn("relative", className)}>
       {/* Light gradient message bar with glass effect */}
-      <div className="bg-gradient-to-r from-green-50/80 to-emerald-50/80 backdrop-blur-sm border border-green-200/50 text-green-800 px-4 py-2 rounded-t-lg pb-5 -mb-4 relative z-10 shadow-sm">
+      <div className="bg-gradient-to-r from-green-50/80 to-emerald-50/80 backdrop-blur-sm border border-green-200/50 text-green-800 px-4 pt-2 rounded-t-lg pb-5 -mb-4 relative z-10 shadow-sm">
         <div className="flex items-center gap-2">
           <Check className="w-3 h-3 flex-shrink-0 text-green-600" />
           <span className="text-xs font-medium">{message}</span>
